@@ -7,7 +7,7 @@ export const getAllContacts = (req, res) => {
       return;
     }
 
-    return res.render("home", {
+    return res.render("contact", {
       title: "Contacts List",
       contact_list: contact,
     });
