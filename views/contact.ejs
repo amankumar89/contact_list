@@ -27,8 +27,13 @@
     </div>
     <form action="/create-contact" method="post">
       <p id="form-heading">Enter Details to Add Contacts</p>
-      <input type="text" name="name" placeholder="Enter Name" required />
-      <input type="number" name="phone" placeholder="Enter Phone No" required />
+      <input type="text" name="name" placeholder="Enter Name" />
+      <input type="number" name="phone" placeholder="Enter Phone No" />
+      <% if(errorMsg) { %>
+        <div class="alert alert-danger" role="alert">
+          <%= errorMsg %>
+        </div>
+      <% } %>
       <button type="submit">Add</button>
     </form>
   </body>

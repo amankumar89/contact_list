@@ -10,6 +10,7 @@ export const getAllContacts = (req, res) => {
     return res.render("contact", {
       title: "Contacts List",
       contact_list: contact,
+      errorMsg: null,
     });
   });
 };
@@ -20,14 +21,11 @@ export const createContact = (req, res) => {
       name: req.body.name,
       phone: req.body.phone,
     },
-    function (err, newContact) {
+    function (err) {
       if (err) {
         console.log("error in creating contact", err);
         return;
       }
-
-      console.log("*********", newContact);
-
       return res.redirect("back");
     }
   );
